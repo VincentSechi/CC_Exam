@@ -25,7 +25,7 @@ services:
     region: frankfurt
     repo: https://github.com/VincentSechi/CC_Exam.git
     rootDir: frontend
-    buildCommand: npm install
+    buildCommand: npm install && npm run build
     startCommand: npm run start
     envVars:
       - key: REACT_APP_API_BASE_URL
