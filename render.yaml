@@ -1,0 +1,72 @@
+services:
+  - type: web
+    name: exam-backend
+    env: node
+    plan: starter
+    region: frankfurt
+    repo: https://github.com/<votre-compte>/<votre-repo>
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm run start
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_APPLICATION_PASSWORD
+        sync: false
+
+  - type: web
+    name: exam-frontend
+    env: node
+    plan: starter
+    region: frankfurt
+    repo: https://github.com/<votre-compte>/<votre-repo>
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: REACT_APP_API_BASE_URL
+        value: https://exam-backend.onrender.com/api
+
+  - type: web
+    name: exam-notifications
+    env: node
+    plan: starter
+    region: frankfurt
+    repo: https://github.com/<votre-compte>/<votre-repo>
+    rootDir: microservices/notifications
+    buildCommand: npm install
+    startCommand: npm run start
+    envVars:
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_APPLICATION_PASSWORD
+        sync: false
+
+  - type: web
+    name: exam-stock-management
+    env: node
+    plan: starter
+    region: frankfurt
+    repo: https://github.com/<votre-compte>/<votre-repo>
+    rootDir: microservices/stock-management
+    buildCommand: npm install
+    startCommand: npm run start
+
+  - type: web
+    name: exam-gateway
+    env: node
+    plan: starter
+    region: frankfurt
+    repo: https://github.com/<votre-compte>/<votre-repo>
+    rootDir: gateway
+    buildCommand: npm install
+    startCommand: npm run start
+    envVars:
+      - key: NOTIFI_SERVICE_URL
+        value: https://exam-notifications.onrender.com
+      - key: STOCK_SERVICE_URL
+        value: https://exam-stock-management.onrender.com
