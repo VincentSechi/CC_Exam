@@ -5,6 +5,13 @@
     "start:gateway": "nodemon gateway/server.js",
     "start:backend": "nodemon backend/server.js",
     "start:frontend": "npm --prefix frontend start",
-    "start:all": "npm-run-all --parallel start:notifications start:stock-management start:gateway start:backend start:frontend"
+    "start:all": "npm-run-all --parallel start:notifications start:stock-management start:gateway start:backend start:frontend",
+    "lint": "eslint \"backend/**/*.js\" \"gateway/**/*.js\" \"microservices/**/*.js\" \"frontend/src/**/*.js\""
+  },
+  "devDependencies": {
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.37.2",
+    "prettier": "^3.4.2"
   }
 }

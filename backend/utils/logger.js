@@ -1,0 +1,21 @@
+// backend/utils/logger.js
+const { createLogger, format, transports } = require('winston');
+
+const logger = createLogger({
+  level: process.env.LOG_LEVEL || 'info',
+  format: format.combine(
+    format.timestamp(),
+    format.errors({ stack: true }),
+    format.splat(),
+    format.json()
+  ),
+  transports: [
+    new transports.Console({
+      handleExceptions: true,
+      format: format.combine(format.colorize(), format.simple()),
+    }),
+  ],
+  exitOnError: false,
+});
+
+module.exports = logger;

@@ -7,8 +7,8 @@ const router = express.Router();
 
 router.get('/', authenticateToken, isAdmin, getOrders); // Accès pour administrateurs
 router.post('/', authenticateToken, createOrder); // Accès pour utilisateurs connectés
-router.delete('/:id', authenticateToken, deleteOrder); // Accès pour administrateurs
-router.put('/:id/validate', authenticateToken, isAdmin, validateOrder); // Accès pour administrateurs
+router.delete('/:orderId', authenticateToken, isAdmin, deleteOrder); // Accès pour administrateurs
+router.put('/:orderId/validate', authenticateToken, isAdmin, validateOrder); // Accès pour administrateurs
 router.put('/:orderId/status', authenticateToken, isAdmin, updateOrderStatus); // Accès pour administrateurs
 
 
