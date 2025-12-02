@@ -2,9 +2,9 @@ services:
   - type: web
     name: exam-backend
     env: node
-    plan: starter
+    plan: free
     region: frankfurt
-    repo: https://github.com/<votre-compte>/<votre-repo>
+    repo: https://github.com/VincentSechi/CC_Exam.git
     rootDir: backend
     buildCommand: npm install
     startCommand: npm run start
@@ -21,9 +21,9 @@ services:
   - type: web
     name: exam-frontend
     env: node
-    plan: starter
+    plan: free
     region: frankfurt
-    repo: https://github.com/<votre-compte>/<votre-repo>
+    repo: https://github.com/VincentSechi/CC_Exam.git
     rootDir: frontend
     buildCommand: npm install && npm run build
     startCommand: npm run start
@@ -34,9 +34,9 @@ services:
   - type: web
     name: exam-notifications
     env: node
-    plan: starter
+    plan: free
     region: frankfurt
-    repo: https://github.com/<votre-compte>/<votre-repo>
+    repo: https://github.com/VincentSechi/CC_Exam.git
     rootDir: microservices/notifications
     buildCommand: npm install
     startCommand: npm run start
@@ -49,9 +49,9 @@ services:
   - type: web
     name: exam-stock-management
     env: node
-    plan: starter
+    plan: free
     region: frankfurt
-    repo: https://github.com/<votre-compte>/<votre-repo>
+    repo: https://github.com/VincentSechi/CC_Exam.git
     rootDir: microservices/stock-management
     buildCommand: npm install
     startCommand: npm run start
@@ -59,9 +59,9 @@ services:
   - type: web
     name: exam-gateway
     env: node
-    plan: starter
+    plan: free
     region: frankfurt
-    repo: https://github.com/<votre-compte>/<votre-repo>
+    repo: https://github.com/VincentSechi/CC_Exam.git
     rootDir: gateway
     buildCommand: npm install
     startCommand: npm run start
