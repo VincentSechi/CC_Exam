@@ -20,13 +20,13 @@ services:
 
   - type: web
     name: exam-frontend
-    env: node
+    env: static
     plan: free
     region: frankfurt
     repo: https://github.com/VincentSechi/CC_Exam.git
     rootDir: frontend
     buildCommand: npm install && npm run build
-    startCommand: npm run start
+    staticPublishPath: build
     envVars:
       - key: REACT_APP_API_BASE_URL
         value: https://exam-backend.onrender.com/api
